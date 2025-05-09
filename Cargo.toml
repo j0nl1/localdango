@@ -1,0 +1,18 @@
+[package]
+name = "localdango"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1"
+tokio = { version = "1", features = ["full"] }
+
+dango-mock-httpd = { path = "../monorepo/dango/mocks/httpd" }
+grug = { path = "../monorepo/grug/std" }
+
+dango-faucet = { path = "../bots/faucet" }
+bot-types = { path = "../bots/types" }
+
+[[bin]]
+name = "dango"
+path = "src/bin/dango.rs"
