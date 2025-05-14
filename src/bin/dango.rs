@@ -2,7 +2,7 @@ use {
     anyhow::{Error, Result},
     bot_types::{Args, ClientType},
     dango_faucet::serve,
-    dango_mock_httpd::{BlockCreation, TestOption},
+    dango_mock_httpd::{BlockCreation, GenesisOption, Preset, TestOption},
     grug::{HexByteArray, Inner},
     std::str::FromStr,
 };
@@ -33,7 +33,11 @@ async fn main() -> Result<()> {
                 http_port.parse().map_err(Error::msg)?,
                 BlockCreation::OnBroadcast,
                 None,
-                TestOption::default().with_chain_id(chain_id),
+                TestOption {
+                    chain_id: chain_id.to_string(),
+                    ..Default::default()
+                },
+                GenesisOption::preset_test(),
                 true,
                 None,
             )
