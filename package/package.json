@@ -1,0 +1,23 @@
+{
+	"name": "@left-curve/localdango",
+	"version": "0.1.0",
+	"description": "A local Dango server for development and testing purposes.",
+	"main": "./build/src/index.cjs",
+	"module": "./build/src/index.js",
+	"types": "./build/src/index.d.ts",
+	"type": "module",
+	"bin": {
+		"localdango": "./build/src/cli.js"
+	},
+	"scripts": {
+		"build": "rslib build"
+	},
+	"dependencies": {
+		"commander": "^13.1.0"
+	},
+	"devDependencies": {
+		"@rslib/core": "^0.7.1",
+		"@types/node": "^22.15.18",
+		"typescript": "^5.8.3"
+	}
+}

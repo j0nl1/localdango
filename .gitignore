@@ -1,1 +1,13 @@
-/target
+# Editors
+.idea/
+.vscode/
+
+# Rust
+target/
+
+# macOS
+**/.DS_Store
+
+# Node.js
+**/node_modules
+**/build

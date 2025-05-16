@@ -6,13 +6,20 @@ edition = "2021"
 [dependencies]
 anyhow = "1"
 tokio = { version = "1", features = ["full"] }
+clap = { version = "4.5.38", features = ["derive", "wrap_help"] }
 
+dango-testing = { path = "../monorepo/dango/testing" }
+dango-types = { path = "../monorepo/dango/types" }
+dango-genesis = { path = "../monorepo/dango/genesis" }
 dango-mock-httpd = { path = "../monorepo/dango/mocks/httpd" }
 grug = { path = "../monorepo/grug/std" }
 
 dango-faucet = { path = "../bots/faucet" }
 bot-types = { path = "../bots/types" }
 
+[lib]
+path = "src/lib.rs"
+
 [[bin]]
-name = "dango"
-path = "src/bin/dango.rs"
+name = "localdango"
+path = "src/bin/localdango.rs"
